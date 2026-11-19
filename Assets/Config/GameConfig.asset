@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afec15fc8ee9cd641915f0dc5fafb275, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: Assembly-CSharp::AstraBricks.GameConfig
+  fieldWidth: 100
+  fieldHeight: 170
+  wallThickness: 2
+  brickColumns: 10
+  brickRows: 20
+  brickHeight: 5
+  brickTopOffset: 0
+  paddleWidth: 25
+  paddleHeight: 5
+  paddleHeightAboveBottom: 12
+  paddleControlMode: 0
+  swipeSensitivity: 30
+  keyboardSpeed: 120
+  paddleFollowTime: 0.05
+  paddleMaxCatchUpSpeed: 300
+  boundDirection: 65
+  ballSpeed: 80
+  ballRadius: 2
+  maxDeviation: 0.9
+  randomDeviation: 0.1
+  autoStartDelay: 3
+  startAngleSpread: 5
+  sideRayCooldownFrames: 5
