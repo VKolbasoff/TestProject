@@ -178,6 +178,9 @@ namespace AstraBricks
                 return;
             }
 
+            var brick = hit.collider.GetComponent<Brick>();
+            if (brick != null) brick.Break();
+
             direction = Vector2.Reflect(direction, hit.normal);
 
             if (Mathf.Abs(direction.x) > cfg.maxDeviation)

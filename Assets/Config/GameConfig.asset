@@ -16,9 +16,9 @@ MonoBehaviour:
   fieldHeight: 170
   wallThickness: 2
   brickColumns: 10
-  brickRows: 20
+  brickRows: 15
   brickHeight: 5
-  brickTopOffset: 0
+  brickTopOffset: 10
   paddleWidth: 25
   paddleHeight: 5
   paddleHeightAboveBottom: 12

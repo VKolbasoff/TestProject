@@ -5,7 +5,7 @@ namespace AstraBricks
 {
     /// <summary>
     /// Раскладка кирпичей: сетка brickColumns x brickRows из GameConfig,
-    /// кирпич занимает всю клетку, два типа чередуются шахматкой.
+    /// кирпич занимает всю клетку, тип чередуется по ряду (ряд 1-го, ряд 2-го и т.д.).
     /// Кирпичи пока заглушки — спрайт и коллайдер, без разрушения и очков.
     /// </summary>
     public class BrickField : MonoBehaviour
@@ -79,7 +79,7 @@ namespace AstraBricks
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    bool first = ((row + col) & 1) == 0;
+                    bool first = (row & 1) == 0;
                     float x = left + (col + 0.5f) * brickW;
                     float y = top - (row + 0.5f) * brickH;
                     bricks.Add(CreateBrick(root, col, row, first ? 1 : 2, first ? brickType1 : brickType2,
@@ -119,7 +119,17 @@ namespace AstraBricks
                 size.x / Mathf.Max(0.0001f, scale.x),
                 size.y / Mathf.Max(0.0001f, scale.y));
 
+            var brick = go.AddComponent<Brick>();
+            brick.Init(this, type);
+
             return go;
+        }
+
+        /// <summary>Убирает разбитый кирпич из списка раскладки.</summary>
+        public void Remove(Brick brick)
+        {
+            if (brick == null) return;
+            bricks.Remove(brick.gameObject);
         }
 
         /// <summary>Масштаб, при котором спрайт ровно совпадает с клеткой.</summary>
